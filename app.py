@@ -71,7 +71,28 @@ def handle_message(event):
                 event.reply_token,
                 TextSendMessage(text="Bot can't leave from 1:1 chat"))
 #===================================================
+    elif 'gambar' in text:
+        separate = text.split(" ")
+        search = text.replace(separate[0] + " ","")
+        r = requests.get("http://rahandiapi.herokuapp.com/imageapi?key=betakey&q={}".format(search))
+        data = r.text
+        data = json.loads(data)
 
+        if data["result"] != []:
+            items = data["result"]
+            path = random.choice(items)
+            a = items.index(path)
+            b = len(items)
+
+        image_message = ImageSendMessage(
+            original_content_url=path,
+            preview_image_url=path
+        )
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            image_message
+        )
 
 #=======================================================================================================================
 import os
