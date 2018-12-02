@@ -1,6 +1,6 @@
 LINE CHAT BOT OFFICIAL
 
-[VIDEO TUTORIAL](https://youtu.be/56Gu6y8rX7k)
+[VIDEO TUTORIAL](https://shortid.co/A5g8u)
 
 # linebot
 Simple line bot creation using Python.
